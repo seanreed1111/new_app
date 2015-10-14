@@ -1,0 +1,574 @@
+
+
+Started GET "/" for ::1 at 2015-10-14 09:59:58 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 22ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePurchases (20151014140150)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "cost" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151014140150"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2015-10-14 10:05:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:05:32 -0400
+Processing by PurchasesController#index as HTML
+  [1m[35mPurchase Load (0.2ms)[0m  SELECT "purchases".* FROM "purchases"
+  Rendered purchases/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1247ms (Views: 1244.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/purchases.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/assets/scaffolds.self-815692705c5ca388b9194ab982e7db8ce3b8cea8ed149b3eafd8d88871254197.css?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/assets/purchases.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-14 10:05:33 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:05:43 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (25.6ms)
+  Rendered purchases/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 66ms (Views: 60.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:05:50 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6SzxcZVraYXHTnB4jT/Yf6d/YDwBKX9MKt5m7WHZ8WZAIVt+qvoe4LiAdQ2x98hEcqppV56sNkkSF8Re7x4WpA==", "purchase"=>{"name"=>"Thing1", "cost"=>"300"}, "commit"=>"Create Purchase"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "purchases" ("name", "cost", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Thing1"], ["cost", 300.0], ["created_at", "2015-10-14 14:05:50.316472"], ["updated_at", "2015-10-14 14:05:50.316472"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/purchases/1
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/purchases/1" for ::1 at 2015-10-14 10:05:50 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPurchase Load (0.2ms)[0m  SELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered purchases/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 54ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:05:57 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.2ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:12:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PurchasesController#index as HTML
+  [1m[35mPurchase Load (0.1ms)[0m  SELECT "purchases".* FROM "purchases"
+  Rendered purchases/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 399ms (Views: 389.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/purchases.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/scaffolds.self-815692705c5ca388b9194ab982e7db8ce3b8cea8ed149b3eafd8d88871254197.css?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/application.self-1f5d96935afb86a3446083be08a21c9f82dcb9dcc73989e80870a7668c218e55.css?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/purchases.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:12:15 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:12:16 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:13:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PurchasesController#index as HTML
+  [1m[35mPurchase Load (0.1ms)[0m  SELECT "purchases".* FROM "purchases"
+  Rendered purchases/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 171ms (Views: 160.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-833b8d85699e40406d2a73d4c1ce0b3351bf4cbbb7bf387f8f5a2b2a2d5b127f.css?body=1" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/assets/purchases.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:13:36 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:13:49 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (14.0ms)
+  Rendered purchases/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:20:02 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"87MTbCAksBlEEDij0i5oC++BjXovhablA5Y0N98mW8tavrljH7XHfDvePdbu5ngwOlSEEbAA7+A7X5aEUeG8CQ==", "purchase"=>{"name"=>"", "cost"=>""}, "commit"=>"Create Purchase"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/seanreed1/Development/Rails/new_app/app/models/purchase.rb:3: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+  validates :cost, numericality: {greater_than 0}
+                                                ^):
+  app/models/purchase.rb:3: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+  app/controllers/purchases_controller.rb:27:in `create'
+
+
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.8ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (49.1ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seanreed1/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.4ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:20:49 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"87MTbCAksBlEEDij0i5oC++BjXovhablA5Y0N98mW8tavrljH7XHfDvePdbu5ngwOlSEEbAA7+A7X5aEUeG8CQ==", "purchase"=>{"name"=>"", "cost"=>""}, "commit"=>"Create Purchase"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered purchases/_form.html.erb (2.7ms)
+  Rendered purchases/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 35ms (Views: 27.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-833b8d85699e40406d2a73d4c1ce0b3351bf4cbbb7bf387f8f5a2b2a2d5b127f.css?body=1" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started GET "/assets/purchases.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:20:49 -0400
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:23:01 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"87MTbCAksBlEEDij0i5oC++BjXovhablA5Y0N98mW8tavrljH7XHfDvePdbu5ngwOlSEEbAA7+A7X5aEUeG8CQ==", "purchase"=>{"name"=>"", "cost"=>""}, "commit"=>"Create Purchase"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPurchase Exists (0.2ms)[0m  SELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered purchases/_form.html.erb (2.6ms)
+  Rendered purchases/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 49ms (Views: 29.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-833b8d85699e40406d2a73d4c1ce0b3351bf4cbbb7bf387f8f5a2b2a2d5b127f.css?body=1" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/assets/purchases.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:23:02 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:23:04 -0400
+Processing by PurchasesController#index as HTML
+  [1m[35mPurchase Load (0.1ms)[0m  SELECT "purchases".* FROM "purchases"
+  Rendered purchases/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:23:04 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:23:04 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:23:06 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (1.7ms)
+  Rendered purchases/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:23:08 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.1ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:23:10 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (1.2ms)
+  Rendered purchases/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:23:19 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ka+ISk+AcdhqOlyZrA9CQfU6yD/HYtDocwkxCX48FFU4oiJFcBEGvRX0WeyQx1J6IO/BVFjnme1LwJO68Pvzlw==", "purchase"=>{"name"=>"thing1", "cost"=>"300"}, "commit"=>"Create Purchase"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPurchase Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('thing1') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered purchases/_form.html.erb (1.7ms)
+  Rendered purchases/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:23:19 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:23:19 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:23:54 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.2ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:23:54 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:23:54 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:23:55 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (3.1ms)
+  Rendered purchases/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:24:02 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vIja0PmQ1LPqRbK0gqHznsW7lEkaewmxjVCZGjyAelcVhXDfxgGj1pWLt8G+aeOlEG6dIoX+QLS1mTupskedlQ==", "purchase"=>{"name"=>"thing1", "cost"=>"33"}, "commit"=>"Create Purchase"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPurchase Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('thing1') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered purchases/_form.html.erb (1.8ms)
+  Rendered purchases/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:24:02 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:24:02 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:24:35 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.2ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:24:35 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:24:35 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:24:36 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (1.3ms)
+  Rendered purchases/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:24:42 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8iJ1pDwF7bXm9vEDTufFKXXr7O/38mtOPrzvVoHZU2pbL9+rA5Sa0Jk49HZyL9USoD7lhGh3IksGdU3lDx60qA==", "purchase"=>{"name"=>"thing2", "cost"=>"55"}, "commit"=>"Create Purchase"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPurchase Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('thing2') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "purchases" ("name", "cost", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "thing2"], ["cost", 55.0], ["created_at", "2015-10-14 14:24:42.344220"], ["updated_at", "2015-10-14 14:24:42.344220"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/purchases/2
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/purchases/2" for ::1 at 2015-10-14 10:24:42 -0400
+Processing by PurchasesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPurchase Load (0.2ms)[0m  SELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered purchases/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:24:42 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:24:42 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:24:45 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.1ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:25:00 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (1.2ms)
+  Rendered purchases/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:25:05 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kr65MW/iGzqwyeac1S0mNbZiTIcyycbPZdEQN/wXcxA7sxM+UHNsX88H4+np5TYOY7dF7K1Mj8pdGLKEctCU0g==", "purchase"=>{"name"=>"thing2", "cost"=>"3"}, "commit"=>"Create Purchase"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPurchase Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('thing2') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered purchases/_form.html.erb (1.8ms)
+  Rendered purchases/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:25:05 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:25:05 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:25:20 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.3ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:25:20 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:25:20 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:25:21 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (1.5ms)
+  Rendered purchases/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:25:26 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"biOAleHgOVzn36t83/XvxxwQ63jeVVXcDJK33scQaErHLiqa3nFOOZgRrgnjPf/8ycXiE0HQHNk0WxVtSdePiA==", "purchase"=>{"name"=>"thing2", "cost"=>"2"}, "commit"=>"Create Purchase"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPurchase Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('thing2') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered purchases/_form.html.erb (2.1ms)
+  Rendered purchases/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:25:26 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:25:26 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:25:43 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.3ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:25:43 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:25:43 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:25:44 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (2.6ms)
+  Rendered purchases/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:25:49 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fAAorFV4Tabx1AwT6cjzIdaOT9iQ05L0cGOhCxiFcdfVDYKjauk6w44aCWbVAOMaA1tGsw9W2/FIqgO4lkKWFQ==", "purchase"=>{"name"=>"thing1", "cost"=>"2"}, "commit"=>"Create Purchase"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPurchase Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('thing1') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered purchases/_form.html.erb (1.6ms)
+  Rendered purchases/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:25:49 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:25:49 -0400
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:25:55 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.1ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:25:55 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:25:55 -0400
+
+
+Started GET "/purchases/new" for ::1 at 2015-10-14 10:26:58 -0400
+Processing by PurchasesController#new as HTML
+  Rendered purchases/_form.html.erb (1.6ms)
+  Rendered purchases/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 34ms (Views: 28.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/purchases" for ::1 at 2015-10-14 10:27:03 -0400
+Processing by PurchasesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G4hjW34Qa63LFFBmnZbELVRtUvRiRM5ch5m8plsvhzmyhclUQYEcyLTaVROhXtQWgbhbn/3Bh1m/UB4V1ehg+w==", "purchase"=>{"name"=>"thing3", "cost"=>"33"}, "commit"=>"Create Purchase"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPurchase Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "purchases" WHERE LOWER("purchases"."name") = LOWER('thing3') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "purchases" ("name", "cost", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "thing3"], ["cost", 33.0], ["created_at", "2015-10-14 14:27:03.126112"], ["updated_at", "2015-10-14 14:27:03.126112"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/purchases
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:27:03 -0400
+Processing by PurchasesController#index as HTML
+  [1m[35mPurchase Load (0.1ms)[0m  SELECT "purchases".* FROM "purchases"
+  Rendered purchases/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:27:03 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:27:03 -0400
+
+
+Started GET "/purchases/1/edit" for ::1 at 2015-10-14 10:27:15 -0400
+Processing by PurchasesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPurchase Load (0.2ms)[0m  [1mSELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered purchases/_form.html.erb (1.6ms)
+  Rendered purchases/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/purchases/1" for ::1 at 2015-10-14 10:27:20 -0400
+Processing by PurchasesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qi1HTbhnqXe/tLufZLvCBuo//b/FsZghHcdPryBygcrrIO1Ch/beEsB6vupYc9I9P+r01Fo00SQlDu0crrVmCA==", "purchase"=>{"name"=>"Thing1", "cost"=>"3099"}, "commit"=>"Update Purchase", "id"=>"1"}
+  [1m[35mPurchase Load (0.1ms)[0m  SELECT  "purchases".* FROM "purchases" WHERE "purchases"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPurchase Exists (0.1ms)[0m  SELECT  1 AS one FROM "purchases" WHERE (LOWER("purchases"."name") = LOWER('Thing1') AND "purchases"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "purchases" SET "cost" = ?, "updated_at" = ? WHERE "purchases"."id" = ?[0m  [["cost", 3099.0], ["updated_at", "2015-10-14 14:27:20.977972"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/purchases
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/purchases" for ::1 at 2015-10-14 10:27:20 -0400
+Processing by PurchasesController#index as HTML
+  [1m[36mPurchase Load (0.1ms)[0m  [1mSELECT "purchases".* FROM "purchases"[0m
+  Rendered purchases/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2015-10-14 10:27:21 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2015-10-14 10:27:21 -0400
